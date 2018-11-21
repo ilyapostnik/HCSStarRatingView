@@ -288,9 +288,12 @@
     }
     CGContextRestoreGState(UIGraphicsGetCurrentContext());
     
-    [self.starBorderColor setStroke];
-    starShapePath.lineWidth = _starBorderWidth;
-    [starShapePath stroke];
+    if (progress != 1.0f)
+    {
+        [self.starBorderColor setStroke];
+        starShapePath.lineWidth = _starBorderWidth;
+        [starShapePath stroke];
+    }
 }
 
 #pragma mark - Drawing
